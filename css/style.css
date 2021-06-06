@@ -21,8 +21,8 @@ body {
 }
 
 .container {
-  min-height: 100vh;
   display: flex;
+  min-height: 100vh;
   background-image: var(--gradient-one);
 }
 
@@ -41,6 +41,10 @@ body {
 
 .left .logo {
   width: 135px;
+}
+
+.left #hero-mobile {
+  display: none;
 }
 
 .left h1 {
@@ -141,4 +145,40 @@ form button:hover {
 
 .form-control.error input#email {
   border: 2px solid var(--soft-red);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .left {
+    margin: 0 3rem;
+  }
+}
+
+/* Smartphone */
+
+@media (max-width: 511px) {
+  .right {
+    display: none;
+  }
+
+  .left {
+    margin: 0;
+    padding: 2rem 3.5rem;
+  }
+
+  .left > h1,
+  .left > p {
+    text-align: center;
+  }
+
+  .left #hero-mobile {
+    display: block;
+    margin-left: -56px;
+    width: calc(100% + 112px);
+    margin-top: 2rem;
+  }
+
+  .left h1 {
+    margin-top: 5rem;
+  }
 }
