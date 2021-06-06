@@ -6,7 +6,7 @@
   --soft-red: hsl(0, 93%, 68%);
   --dark-grayish-red: hsl(0, 6%, 24%);
   /* gradients */
-  --gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98));
   --gradient-two: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
 
@@ -18,4 +18,127 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  background-image: var(--gradient-one);
+}
+
+.right {
+  background: url("../images/hero-desktop.jpg") no-repeat center center/cover;
+  flex: 1;
+  flex-basis: 50%;
+}
+
+.left {
+  flex: 2;
+  flex-basis: 50%;
+  padding: 3.5rem;
+  margin: 0 6rem;
+}
+
+.left .logo {
+  width: 135px;
+}
+
+.left h1 {
+  padding: 1rem 0;
+  margin-top: 6rem;
+  font-size: 4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+}
+
+.left h1 span {
+  display: inline-block;
+  font-weight: 300;
+  color: var(--desaturated-red);
+}
+
+.left > p {
+  line-height: 1.8;
+  color: var(--desaturated-red);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+form input#email {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid var(--desaturated-red);
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--desaturated-red) !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--desaturated-red) !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--desaturated-red) !important;
+}
+
+input:-ms-input-placeholder {
+  color: var(--desaturated-red) !important;
+}
+
+form .form-control {
+  position: relative;
+}
+
+form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 69%;
+  width: 20%;
+  border-radius: 50px;
+  border: none;
+  background: var(--gradient-two);
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 47%, 85%));
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* show error */
+
+.form-control img#error-icon {
+  position: absolute;
+  top: 13px;
+  right: 100px;
+  visibility: hidden;
+}
+
+.form-control #error-text {
+  margin-left: 2rem;
+  color: var(--soft-red);
+  visibility: hidden;
+}
+
+.form-control.error #error-text,
+.form-control.error img#error-icon {
+  visibility: visible;
+}
+
+.form-control.error input#email {
+  border: 2px solid var(--soft-red);
 }
